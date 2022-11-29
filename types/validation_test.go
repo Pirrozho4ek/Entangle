@@ -3,9 +3,9 @@ package types_test
 import (
 	"testing"
 
+	"github.com/Pirrozho4ek/Entangle/tests"
+	"github.com/Pirrozho4ek/Entangle/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/evmos/ethermint/tests"
-	"github.com/evmos/ethermint/types"
 	"github.com/stretchr/testify/require"
 )
 

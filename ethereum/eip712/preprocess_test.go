@@ -6,6 +6,12 @@ import (
 	"testing"
 
 	"cosmossdk.io/math"
+	"github.com/Pirrozho4ek/Entangle/app"
+	"github.com/Pirrozho4ek/Entangle/encoding"
+	"github.com/Pirrozho4ek/Entangle/ethereum/eip712"
+	"github.com/Pirrozho4ek/Entangle/tests"
+	"github.com/Pirrozho4ek/Entangle/types"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
@@ -13,12 +19,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/evmos/ethermint/app"
-	"github.com/evmos/ethermint/encoding"
-	"github.com/evmos/ethermint/ethereum/eip712"
-	"github.com/evmos/ethermint/tests"
-	"github.com/evmos/ethermint/types"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/Pirrozho4ek/Entangle/crypto/ethsecp256k1"
+	"github.com/Pirrozho4ek/Entangle/rpc/backend/mocks"
+	ethermint "github.com/Pirrozho4ek/Entangle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	ethermint "github.com/evmos/ethermint/types"
 	"github.com/spf13/viper"
 	tmrpcclient "github.com/tendermint/tendermint/rpc/client"
 )

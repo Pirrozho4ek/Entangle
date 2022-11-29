@@ -98,18 +98,18 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v5/modules/core/keeper"
 
 	// unnamed import of statik for swagger UI support
-	_ "github.com/evmos/ethermint/client/docs/statik"
+	_ "github.com/Pirrozho4ek/Entangle/client/docs/statik"
 
-	"github.com/evmos/ethermint/app/ante"
-	srvflags "github.com/evmos/ethermint/server/flags"
-	ethermint "github.com/evmos/ethermint/types"
-	"github.com/evmos/ethermint/x/evm"
-	evmkeeper "github.com/evmos/ethermint/x/evm/keeper"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
-	"github.com/evmos/ethermint/x/evm/vm/geth"
-	"github.com/evmos/ethermint/x/feemarket"
-	feemarketkeeper "github.com/evmos/ethermint/x/feemarket/keeper"
-	feemarkettypes "github.com/evmos/ethermint/x/feemarket/types"
+	"github.com/Pirrozho4ek/Entangle/app/ante"
+	srvflags "github.com/Pirrozho4ek/Entangle/server/flags"
+	ethermint "github.com/Pirrozho4ek/Entangle/types"
+	"github.com/Pirrozho4ek/Entangle/x/evm"
+	evmkeeper "github.com/Pirrozho4ek/Entangle/x/evm/keeper"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
+	"github.com/Pirrozho4ek/Entangle/x/evm/vm/geth"
+	"github.com/Pirrozho4ek/Entangle/x/feemarket"
+	feemarketkeeper "github.com/Pirrozho4ek/Entangle/x/feemarket/keeper"
+	feemarkettypes "github.com/Pirrozho4ek/Entangle/x/feemarket/types"
 
 	// Force-load the tracer engines to trigger registration due to Go-Ethereum v1.10.15 changes
 	_ "github.com/ethereum/go-ethereum/eth/tracers/js"

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
+	"github.com/Pirrozho4ek/Entangle/crypto/ethsecp256k1"
 
 	dbm "github.com/tendermint/tm-db"
 
@@ -20,14 +20,14 @@ import (
 	"github.com/stretchr/testify/suite"
 	tmrpctypes "github.com/tendermint/tendermint/rpc/core/types"
 
-	"github.com/evmos/ethermint/app"
-	"github.com/evmos/ethermint/crypto/hd"
-	"github.com/evmos/ethermint/encoding"
-	"github.com/evmos/ethermint/indexer"
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	rpctypes "github.com/evmos/ethermint/rpc/types"
-	"github.com/evmos/ethermint/tests"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	"github.com/Pirrozho4ek/Entangle/app"
+	"github.com/Pirrozho4ek/Entangle/crypto/hd"
+	"github.com/Pirrozho4ek/Entangle/encoding"
+	"github.com/Pirrozho4ek/Entangle/indexer"
+	"github.com/Pirrozho4ek/Entangle/rpc/backend/mocks"
+	rpctypes "github.com/Pirrozho4ek/Entangle/rpc/types"
+	"github.com/Pirrozho4ek/Entangle/tests"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
 )
 
 type BackendTestSuite struct {

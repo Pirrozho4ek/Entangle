@@ -14,14 +14,14 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/migrations/legacytx"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 
+	"github.com/Pirrozho4ek/Entangle/crypto/ethsecp256k1"
+	"github.com/Pirrozho4ek/Entangle/ethereum/eip712"
+	ethermint "github.com/Pirrozho4ek/Entangle/types"
 	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
 	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	"github.com/evmos/ethermint/ethereum/eip712"
-	ethermint "github.com/evmos/ethermint/types"
 
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
 )
 
 var ethermintCodec codec.ProtoCodecMarshaler

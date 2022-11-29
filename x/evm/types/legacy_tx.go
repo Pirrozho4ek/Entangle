@@ -4,9 +4,9 @@ import (
 	"math/big"
 
 	errorsmod "cosmossdk.io/errors"
+	"github.com/Pirrozho4ek/Entangle/types"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/evmos/ethermint/types"
 )
 
 func newLegacyTx(tx *ethtypes.Transaction) (*LegacyTx, error) {

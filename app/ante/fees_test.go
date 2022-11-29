@@ -4,12 +4,12 @@ import (
 	"math/big"
 
 	sdkmath "cosmossdk.io/math"
+	"github.com/Pirrozho4ek/Entangle/app/ante"
+	"github.com/Pirrozho4ek/Entangle/tests"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/evmos/ethermint/app/ante"
-	"github.com/evmos/ethermint/tests"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
 )
 
 var execTypes = []struct {

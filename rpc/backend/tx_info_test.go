@@ -2,21 +2,22 @@ package backend
 
 import (
 	"fmt"
+	"math/big"
+
+	"github.com/Pirrozho4ek/Entangle/indexer"
+	"github.com/Pirrozho4ek/Entangle/rpc/backend/mocks"
+	rpctypes "github.com/Pirrozho4ek/Entangle/rpc/types"
+	ethermint "github.com/Pirrozho4ek/Entangle/types"
+	evmtypes "github.com/Pirrozho4ek/Entangle/x/evm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/evmos/ethermint/indexer"
-	"github.com/evmos/ethermint/rpc/backend/mocks"
-	rpctypes "github.com/evmos/ethermint/rpc/types"
-	ethermint "github.com/evmos/ethermint/types"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmlog "github.com/tendermint/tendermint/libs/log"
 	tmrpctypes "github.com/tendermint/tendermint/rpc/core/types"
 	"github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 	"google.golang.org/grpc/metadata"
-	"math/big"
 )
 
 func (suite *BackendTestSuite) TestGetTransactionByHash() {
@@ -299,7 +300,7 @@ func (suite *BackendTestSuite) TestGetTransactionByBlockAndIndex() {
 		1,
 		0,
 		big.NewInt(1),
-        suite.backend.chainID,
+		suite.backend.chainID,
 	)
 	testCases := []struct {
 		name         string
@@ -393,7 +394,7 @@ func (suite *BackendTestSuite) TestGetTransactionByBlockNumberAndIndex() {
 		1,
 		0,
 		big.NewInt(1),
-        suite.backend.chainID,
+		suite.backend.chainID,
 	)
 	testCases := []struct {
 		name         string
@@ -585,8 +586,8 @@ func (suite *BackendTestSuite) TestGetTransactionReceipt() {
 
 			db := dbm.NewMemDB()
 			suite.backend.indexer = indexer.NewKVIndexer(db, tmlog.NewNopLogger(), suite.backend.clientCtx)
-            err := suite.backend.indexer.IndexBlock(tc.block, tc.blockResult)
-            suite.Require().NoError(err)
+			err := suite.backend.indexer.IndexBlock(tc.block, tc.blockResult)
+			suite.Require().NoError(err)
 
 			txReceipt, err := suite.backend.GetTransactionReceipt(common.HexToHash(tc.tx.Hash))
 			if tc.expPass {
