@@ -2,6 +2,7 @@ package backend
 
 import (
 	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/crypto"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
@@ -38,12 +39,12 @@ func (suite *BackendTestSuite) TestTraceTransaction() {
 
 	msgEthereumTx.From = from.String()
 	msgEthereumTx.Sign(ethSigner, suite.signer)
-	tx, _ := msgEthereumTx.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aphoton")
+	tx, _ := msgEthereumTx.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aENTGL")
 	txBz, _ := txEncoder(tx)
 
 	msgEthereumTx2.From = from.String()
 	msgEthereumTx2.Sign(ethSigner, suite.signer)
-	tx2, _ := msgEthereumTx.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aphoton")
+	tx2, _ := msgEthereumTx.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aENTGL")
 	txBz2, _ := txEncoder(tx2)
 
 	testCases := []struct {
@@ -180,7 +181,7 @@ func (suite *BackendTestSuite) TestTraceTransaction() {
 			suite.backend.indexer = indexer.NewKVIndexer(db, tmlog.NewNopLogger(), suite.backend.clientCtx)
 
 			err := suite.backend.indexer.IndexBlock(tc.block, tc.responseBlock)
-            suite.Require().NoError(err)
+			suite.Require().NoError(err)
 			txResult, err := suite.backend.TraceTransaction(txHash, nil)
 
 			if tc.expPass {

@@ -2,6 +2,8 @@ package backend
 
 import (
 	"fmt"
+	"math/big"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/ethereum/go-ethereum/common"
@@ -11,7 +13,6 @@ import (
 	ethermint "github.com/evmos/ethermint/types"
 	"github.com/spf13/viper"
 	tmrpcclient "github.com/tendermint/tendermint/rpc/client"
-	"math/big"
 )
 
 func (suite *BackendTestSuite) TestRPCMinGasPrice() {
@@ -251,7 +252,7 @@ func (suite *BackendTestSuite) TestSetEtherbase() {
 				queryClient := suite.backend.queryClient.QueryClient.(*mocks.EVMQueryClient)
 				RegisterStatus(client)
 				RegisterValidatorAccount(queryClient, suite.acc)
-				c := sdk.NewDecCoin("aphoton", sdk.NewIntFromBigInt(big.NewInt(1)))
+				c := sdk.NewDecCoin("aENTGL", sdk.NewIntFromBigInt(big.NewInt(1)))
 				suite.backend.cfg.SetMinGasPrices(sdk.DecCoins{c})
 				delAddr, _ := suite.backend.GetCoinbase()
 				//account, _ := suite.backend.clientCtx.AccountRetriever.GetAccount(suite.backend.clientCtx, delAddr)
@@ -276,7 +277,7 @@ func (suite *BackendTestSuite) TestSetEtherbase() {
 		//		queryClient := suite.backend.queryClient.QueryClient.(*mocks.EVMQueryClient)
 		//		RegisterStatus(client)
 		//		RegisterValidatorAccount(queryClient, suite.acc)
-		//		c := sdk.NewDecCoin("aphoton", sdk.NewIntFromBigInt(big.NewInt(1)))
+		//		c := sdk.NewDecCoin("aENTGL", sdk.NewIntFromBigInt(big.NewInt(1)))
 		//		suite.backend.cfg.SetMinGasPrices(sdk.DecCoins{c})
 		//		delAddr, _ := suite.backend.GetCoinbase()
 		//		account, _ := suite.backend.clientCtx.AccountRetriever.GetAccount(suite.backend.clientCtx, delAddr)

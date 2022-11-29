@@ -2,6 +2,7 @@ package backend
 
 import (
 	"fmt"
+
 	"github.com/cosmos/cosmos-sdk/crypto"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
@@ -103,7 +104,7 @@ func (suite *BackendTestSuite) TestSendTransaction() {
 				ethSigner := ethtypes.LatestSigner(suite.backend.ChainConfig())
 				msg := callArgsDefault.ToTransaction()
 				msg.Sign(ethSigner, suite.backend.clientCtx.Keyring)
-				tx, _ := msg.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aphoton")
+				tx, _ := msg.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aENTGL")
 				txEncoder := suite.backend.clientCtx.TxConfig.TxEncoder()
 				txBytes, _ := txEncoder(tx)
 				RegisterBroadcastTxError(client, txBytes)
@@ -128,7 +129,7 @@ func (suite *BackendTestSuite) TestSendTransaction() {
 				ethSigner := ethtypes.LatestSigner(suite.backend.ChainConfig())
 				msg := callArgsDefault.ToTransaction()
 				msg.Sign(ethSigner, suite.backend.clientCtx.Keyring)
-				tx, _ := msg.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aphoton")
+				tx, _ := msg.BuildTx(suite.backend.clientCtx.TxConfig.NewTxBuilder(), "aENTGL")
 				txEncoder := suite.backend.clientCtx.TxConfig.TxEncoder()
 				txBytes, _ := txEncoder(tx)
 				RegisterBroadcastTx(client, txBytes)

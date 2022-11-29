@@ -110,7 +110,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Succeeds - Standard MsgSend",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -118,7 +118,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 				banktypes.NewMsgSend(
 					suite.createTestAddress(),
 					suite.createTestAddress(),
-					suite.makeCoins("photon", math.NewInt(1)),
+					suite.makeCoins("ENTGL", math.NewInt(1)),
 				),
 			},
 			accountNumber: 8,
@@ -128,7 +128,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Succeeds - Standard MsgVote",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -146,7 +146,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Succeeds - Standard MsgDelegate",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -154,7 +154,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 				stakingtypes.NewMsgDelegate(
 					suite.createTestAddress(),
 					sdk.ValAddress(suite.createTestAddress()),
-					suite.makeCoins("photon", math.NewInt(1))[0],
+					suite.makeCoins("ENTGL", math.NewInt(1))[0],
 				),
 			},
 			accountNumber: 25,
@@ -164,7 +164,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Succeeds - Standard MsgWithdrawDelegationReward",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -181,7 +181,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Succeeds - Two Single-Signer MsgDelegate",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -189,12 +189,12 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 				stakingtypes.NewMsgDelegate(
 					testAddress,
 					sdk.ValAddress(suite.createTestAddress()),
-					suite.makeCoins("photon", math.NewInt(1))[0],
+					suite.makeCoins("ENTGL", math.NewInt(1))[0],
 				),
 				stakingtypes.NewMsgDelegate(
 					testAddress,
 					sdk.ValAddress(suite.createTestAddress()),
-					suite.makeCoins("photon", math.NewInt(5))[0],
+					suite.makeCoins("ENTGL", math.NewInt(5))[0],
 				),
 			},
 			accountNumber: 25,
@@ -204,7 +204,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Fails - Two MsgVotes with Different Signers",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -227,7 +227,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Fails - Empty transaction",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo:          "",
@@ -239,7 +239,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Fails - Single-Signer MsgSend + MsgVote",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -252,7 +252,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 				banktypes.NewMsgSend(
 					testAddress,
 					suite.createTestAddress(),
-					suite.makeCoins("photon", math.NewInt(50)),
+					suite.makeCoins("ENTGL", math.NewInt(50)),
 				),
 			},
 			accountNumber: 25,
@@ -263,7 +263,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 			title:   "Fails - Invalid ChainID",
 			chainId: "invalidchainid",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -281,7 +281,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Fails - Includes TimeoutHeight",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -300,7 +300,7 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 		{
 			title: "Fails - Single Message / Multi-Signer",
 			fee: txtypes.Fee{
-				Amount:   suite.makeCoins("aphoton", math.NewInt(2000)),
+				Amount:   suite.makeCoins("aENTGL", math.NewInt(2000)),
 				GasLimit: 20000,
 			},
 			memo: "",
@@ -309,21 +309,21 @@ func (suite *EIP712TestSuite) TestEIP712SignatureVerification() {
 					[]banktypes.Input{
 						banktypes.NewInput(
 							suite.createTestAddress(),
-							suite.makeCoins("photon", math.NewInt(50)),
+							suite.makeCoins("ENTGL", math.NewInt(50)),
 						),
 						banktypes.NewInput(
 							suite.createTestAddress(),
-							suite.makeCoins("photon", math.NewInt(50)),
+							suite.makeCoins("ENTGL", math.NewInt(50)),
 						),
 					},
 					[]banktypes.Output{
 						banktypes.NewOutput(
 							suite.createTestAddress(),
-							suite.makeCoins("photon", math.NewInt(50)),
+							suite.makeCoins("ENTGL", math.NewInt(50)),
 						),
 						banktypes.NewOutput(
 							suite.createTestAddress(),
-							suite.makeCoins("photon", math.NewInt(50)),
+							suite.makeCoins("ENTGL", math.NewInt(50)),
 						),
 					},
 				),

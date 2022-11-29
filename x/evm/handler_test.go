@@ -599,7 +599,7 @@ func (suite *EvmTestSuite) TestERC20TransferReverted() {
 
 			txData, err := types.UnpackTxData(tx.Data)
 			suite.Require().NoError(err)
-			_, err = k.DeductTxCostsFromUserBalance(suite.ctx, *tx, txData, "aphoton", baseFee, true, true, true)
+			_, err = k.DeductTxCostsFromUserBalance(suite.ctx, *tx, txData, "aENTGL", baseFee, true, true, true)
 			suite.Require().NoError(err)
 
 			res, err := k.EthereumTx(sdk.WrapSDKContext(suite.ctx), tx)
