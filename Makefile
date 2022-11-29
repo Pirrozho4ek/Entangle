@@ -217,7 +217,7 @@ $(RUNSIM):
 statik: $(STATIK)
 $(STATIK):
 	@echo "Installing statik..."
-	@(cd /tmp && go get github.com/rakyll/statik@v0.1.6)
+	@(cd /tmp && go install github.com/rakyll/statik@v0.1.6)
 
 contract-tools:
 ifeq (, $(shell which stringer))
@@ -243,14 +243,14 @@ endif
 
 ifeq (, $(shell which protoc-gen-go))
 	@echo "Installing protoc-gen-go..."
-	@go get github.com/fjl/gencodec github.com/golang/protobuf/protoc-gen-go
+	@go get github.com/fjl/gencodec google.golang.org/protobuf/cmd/protoc-gen-go
 else
 	@echo "protoc-gen-go already installed; skipping..."
 endif
 
 ifeq (, $(shell which solcjs))
 	@echo "Installing solcjs..."
-	@npm install -g solc@0.5.11
+	@sudo npm install --location=global solc@0.5.11
 else
 	@echo "solcjs already installed; skipping..."
 endif
